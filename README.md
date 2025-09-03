@@ -35,11 +35,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## Database Access
-This web page is also powered by SQLite.
-The best way to get access to the database and manage it would be to open a new terminal and use this command:
-
-```bash
-npx prisma studio
-```
-

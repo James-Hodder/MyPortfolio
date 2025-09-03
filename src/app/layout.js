@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,13 +18,22 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+        <body className="bg-black text-gray-200 font-sans">
+        <header className="border-b border-gray-800 p-6 flex justify-between items-center">
+            <h1 className="text-2xl font-bold">My Portfolio</h1>
+            <nav className="space-x-6">
+                <Link href="/" className="hover:text-white">Home</Link>
+                <Link href="/blog" className="hover:text-white">Blog</Link>
+                <Link href="/login" className="hover:text-white">Login</Link>
+            </nav>
+        </header>
+        <main className="container mx-auto px-6 py-12">{children}</main>
+        <footer className="border-t border-gray-800 text-center py-6 text-gray-500">
+            © 2025 James Hodder. All rights reserved.
+        </footer>
+        </body>
+        </html>
+    );
 }
